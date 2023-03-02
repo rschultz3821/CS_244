@@ -72,10 +72,11 @@ public:
 			this->expand();
 		}
 		stringData[size++] = value; // 1
-		
 	}
-int getSize() {
+
+	int getSize() {
 		return size;
 	}
-	
 
+
+};
