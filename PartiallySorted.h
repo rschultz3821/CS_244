@@ -67,21 +67,20 @@ public:
 
 	//Append onto the end of the arraylist
 	// Note: not expanding array yet
-	void append(string value) {
+	void add(string value) {
 		if (size + 1 > capacity) {
 			this->expand();
+			size++;
 		}
-		stringData[size++] = value; // 1
-	}
-	
-	string get(int index) {
-		if (index < 0 || index >= size) {
-			throw "Invalid index.";
+		// figure out where the new value should be added
+		for (int i = 0; i < size; i++) {
+			if (stringData[i].length == value.length) {
+				for (int j = i; j < size - i + 1; j++) {
+					stringData[j + 1] = stringData[j];
+				}
+				stringData[i] = value;
+			}
 		}
-
-		for (int i = 0;i < index;i++) {
-			if (index == stringData[i]){
-				return stringData[i]
 	}
 
 	int getSize() {
