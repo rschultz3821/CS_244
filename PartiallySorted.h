@@ -8,8 +8,8 @@ class PartiallySortedList {
 private:
 	//Fields
 	string* stringData;
-	int size{}; //TODO maybe initionalize
-	int capacity{};
+	int size{0}; //TODO maybe initionalize
+	int capacity{10};
 
 public:
 
