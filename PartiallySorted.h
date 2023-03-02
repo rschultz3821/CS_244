@@ -73,6 +73,16 @@ public:
 		}
 		stringData[size++] = value; // 1
 	}
+	
+	string get(int index) {
+		if (index < 0 || index >= size) {
+			throw "Invalid index.";
+		}
+
+		for (int i = 0;i < index;i++) {
+			if (index == stringData[i]){
+				return stringData[i]
+	}
 
 	int getSize() {
 		return size;
