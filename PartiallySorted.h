@@ -3,7 +3,7 @@
 #include<string>
 using namespace std;
 
-//template <typename T>
+template <typename T>
 class PartiallySortedList {
 private:
 	//Fields
