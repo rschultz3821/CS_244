@@ -8,7 +8,7 @@ class PartiallySortedList {
 private:
 	//Fields
 	string* stringData;
-	int size{0}; //TODO maybe initionalize
+	int size{0}; //TODO maybe initialize
 	int capacity{10};
 
 public:
@@ -94,7 +94,7 @@ public:
 						// Moves the current index back one slot in the array
 						stringData[j] = stringData[j - 1];
 					}
-					// Enters in the new value at the avalible index
+					// Enters in the new value at the available index
 					stringData[i] = value;
 					// Increment size since a new value was added
 					size++;
