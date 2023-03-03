@@ -70,7 +70,6 @@ public:
 	void add(string value) {
 		if (size + 1 > capacity) {
 			this->expand();
-			size++;
 		}
 		// figure out where the new value should be added
 		for (int i = 0; i < size; i++) {
@@ -81,6 +80,7 @@ public:
 				stringData[i] = value;
 			}
 		}
+		size++;
 	}
 	
 	string get(int index) {
