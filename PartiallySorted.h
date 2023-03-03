@@ -65,22 +65,43 @@ public:
 		capacity *= 2;
 	}
 
-	//Append onto the end of the arraylist
-	// Note: not expanding array yet
-	void add(string value) {
+	/*
+	* Either the value is going to be added before another string because 
+	* it has the same length or a larger length than value's length. Otherwise it should 
+	* be added at the end of the arraylist.
+	*/
+	bool add(string value) {
+		// Check if the capacity of the arraylist needs to be expanded
 		if (size + 1 > capacity) {
 			this->expand();
 		}
-		// figure out where the new value should be added
+
+		// Loop through stringData until a suitable spot is found
 		for (int i = 0; i < size; i++) {
-			if (stringData[i].length == value.length) {
-				for (int j = i; j < size - i + 1; j++) {
-					stringData[j + 1] = stringData[j];
+			// Check if the value should be inserted at the given index or continue looping
+			if (stringData[i].length >= value.length) {
+				// Loop to make room for the new value being inserted
+				for (int j = size - 1; j > i; j--) { // FIXME - check if condition makes sense
+					// Moves the current index back one slot in the array
+					stringData[j] = stringData[j - 1];
 				}
+				// Enters in the new value at the avalible index
 				stringData[i] = value;
-			}
+				// Increment size since a new value was added
+				size++;
+				// use return to end the loop early since we only need to insert one value at a time
+				return false; // could be used to make the distinction of when only part of the loop was used
+			} 
 		}
+
+		/*
+		* If the loop doesn't find a spot for value, then value must have a length 
+		* larger than the rest and should be put at the end.
+		*/
+		stringData[size] = value;
+		// Increment size since a new value was added
 		size++;
+		return true; // could be used to make a distinction of when the entire loop was used
 	}
 	
 	string get(int index) {
