@@ -125,14 +125,13 @@ public:
 	int CountPermutations(){
 		int groupNum{0};
 		vector<int> groupList;
-		int index{0};
 
         //Going through stringData
 		for(int i = 0; i<size; i++){
 		
 		//setting current to first index
 		if(i == 0){
-			current = stringData[i].length;
+			string* current = stringData[i].length;
 		}else{
 			//checks if current matchings the length, if so then it adds to the groupNum
 			if(current == stringData[i].length){
@@ -149,5 +148,19 @@ public:
 			}
 		}
 		}
+
+		//Calculates from groupList the number the of permutations 
+		int numPerms{0};
+		//loops through groupList 
+		for(int i = 0; i<groupList.size(); i++){
+
+			//calculates factorial of i
+			for(int j = 1; j <= i; ++j) {
+            int num *= j;
+        }
+			//multiples the num each time
+			numPerms *= num;
+		}
+		return numPerms;
 	}
 };
