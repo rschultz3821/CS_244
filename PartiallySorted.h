@@ -122,7 +122,4 @@ public:
 		return size;
 	}
 
-	//hello
-	// goodbye
-
 };
