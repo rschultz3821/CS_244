@@ -8,7 +8,7 @@ class PartiallySortedList {
 private:
 	//Fields
 	string* stringData;
-	int size{0}; //TODO maybe initionalize
+	int size{0}; //TODO maybe initialize
 	int capacity{10};
 
 public:
@@ -94,7 +94,7 @@ public:
 						// Moves the current index back one slot in the array
 						stringData[j] = stringData[j - 1];
 					}
-					// Enters in the new value at the avalible index
+					// Enters in the new value at the available index
 					stringData[i] = value;
 					// Increment size since a new value was added
 					size++;
@@ -122,4 +122,45 @@ public:
 		return size;
 	}
 
+	int CountPermutations(){
+		int groupNum{0};
+		vector<int> groupList;
+
+        //Going through stringData
+		for(int i = 0; i<size; i++){
+		
+		//setting current to first index
+		if(i == 0){
+			string* current = stringData[i].length;
+		}else{
+			//checks if current matchings the length, if so then it adds to the groupNum
+			if(current == stringData[i].length){
+				groupNum++;
+
+				//once the lengths don't match it pushes the groupNum into a vector
+			}else{
+				groupList.pushBack(groupNum);
+				
+				//resets current for comparision
+				current = stringData[i].length;
+				//resets groupNum
+				groupNum = 1;
+			}
+		}
+		}
+
+		//Calculates from groupList the number the of permutations 
+		int numPerms{0};
+		//loops through groupList 
+		for(int i = 0; i<groupList.size(); i++){
+
+			//calculates factorial of i
+			for(int j = 1; j <= i; ++j) {
+            int num *= j;
+        }
+			//multiples the num each time
+			numPerms *= num;
+		}
+		return numPerms;
+	}
 };
