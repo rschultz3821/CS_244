@@ -161,11 +161,11 @@ public:
 			int num = groupList.add(i);
 			//calculates factorial of i
 			for(int j = num; j > 1; --j) {
-             num *= j;
+            	num *= j;
         }
 			//Initializes numPerms starting value
 			if(i == 0 ){
-			numPerm = num;
+				numPerm = num;
 			}
 			//multiples the num each time
 			numPerms *= num;
@@ -176,8 +176,18 @@ public:
 };
 
 class PartiallySortedString{
+private:
+	// Fields
+	string strA;
+	string strB;
 
-
+private:
+	// constructor
+	PartiallySortedString(string strA, string strB){
+		this->strA = strA;
+		this->strB = strB;
+	}
+	
 	string getStrA(){
 		return strA;
 	}
@@ -185,7 +195,6 @@ class PartiallySortedString{
 	string getStrB(){
 		return strB;
 	}
-
 	//== (two strings have exactly the same characters)
 	//|= (incomparability)
 	//>
