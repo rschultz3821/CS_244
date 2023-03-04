@@ -176,5 +176,8 @@ public:
 };
 
 class PartiallySortedString{
-	
+	//== (two strings have exactly the same characters)
+	//|= (incomparability)
+	//>
+	//<
 };
