@@ -13,7 +13,7 @@ private:
 
 public:
 
-	//Empty Constructor
+	//Constructor
 	PartiallySortedList() {
 		stringData = new string[capacity];
 	}
@@ -90,7 +90,7 @@ public:
 				// Check if the value should be inserted at the given index or continue looping
 				if (stringData[i].length >= value.length) {
 					// Loop to make room for the new value being inserted
-					for (int j = size - 1; j > i; j--) { // FIXME - check if condition makes sense
+					for (int j = size; j > i; j--) { 
 						// Moves the current index back one slot in the array
 						stringData[j] = stringData[j - 1];
 					}
@@ -173,4 +173,8 @@ public:
 		//Return number of permutations 
 		return numPerms;
 	}
+};
+
+class PartiallySortedString{
+	
 };
