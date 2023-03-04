@@ -176,6 +176,19 @@ public:
 };
 
 class PartiallySortedString{
+private:
+	// Fields
+	string strA;
+	string strB;
+
+private:
+	// constructor
+	PartiallySortedString(string strA, string strB){
+		this->strA = strA;
+		this->strB = strB;
+	}
+	
+
 	//== (two strings have exactly the same characters)
 	//|= (incomparability)
 	//>
