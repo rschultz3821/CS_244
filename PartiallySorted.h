@@ -187,7 +187,8 @@ private:
 		this->strA = strA;
 		this->strB = strB;
 	}
-	
+
+	// getters
 	string getStrA(){
 		return strA;
 	}
