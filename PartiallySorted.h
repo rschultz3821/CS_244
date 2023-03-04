@@ -176,6 +176,16 @@ public:
 };
 
 class PartiallySortedString{
+
+
+	string getStrA(){
+		return strA;
+	}
+
+	string getStrB(){
+		return strB;
+	}
+
 	//== (two strings have exactly the same characters)
 	//|= (incomparability)
 	//>
