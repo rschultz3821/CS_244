@@ -196,6 +196,17 @@ private:
 	string getStrB(){
 		return strB;
 	}
+
+	// setters
+	void setStrA(string strA){
+		this->strA = strA;
+	}
+
+	void setStrB(string strB){
+		this->strB = strB;
+	}
+
+	
 	//== (two strings have exactly the same characters)
 	//|= (incomparability)
 	//>
