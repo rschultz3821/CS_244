@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 template <typename T>
@@ -126,13 +127,14 @@ public:
 		int groupNum{0};
 		int numPerms{0};
 		vector<int> groupList;
+		string* current;
 
         //Going through stringData
 		for(int i = 0; i<size; i++){
 		
 		//setting current to first index
 		if(i == 0){
-			string* current = stringData[i].length;
+			current = stringData[i].length;
 		}else{
 			//checks if current matchings the length, if so then it adds to the groupNum
 			if(current == stringData[i].length){
