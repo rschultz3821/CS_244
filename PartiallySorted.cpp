@@ -11,6 +11,7 @@ int main() {
 	// Test Count permutations - check if grouplist is size 0
 
 	// Test partially sorted String
+	cout << "PartiallySortedString tests" << endl;
 	// test getters
 	// test setters
 	// test == - true if same length and same characters in order
