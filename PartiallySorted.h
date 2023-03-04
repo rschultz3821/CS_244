@@ -70,7 +70,7 @@ public:
 	* it has the same length or a larger length than value's length. Otherwise it should
 	* be added at the end of the arraylist.
 	*/
-	bool add(string value) {
+	char add(string value) {
 		// Check if the capacity of the arraylist needs to be expanded
 		if (size + 1 > capacity) {
 			this->expand();
@@ -82,7 +82,7 @@ public:
 			stringData[0] = value;
 			// increment size since a new value was added
 			size++;
-			return false; // return false because the loop isn't used
+			return 'a'; // return false because the loop isn't used
 		}
 		else {
 			// Loop through stringData until a suitable spot is found
@@ -99,7 +99,7 @@ public:
 					// Increment size since a new value was added
 					size++;
 					// use return to end the loop early since we only need to insert one value at a time
-					return false; // could be used to make the distinction of when only part of the loop was used
+					return 'b'; // could be used to make the distinction of when only part of the loop was used
 				}
 			}
 
@@ -110,7 +110,7 @@ public:
 			stringData[size] = value;
 			// Increment size since a new value was added
 			size++;
-			return true; // could be used to make a distinction of when the entire loop was used
+			return 'c'; // could be used to make a distinction of when the entire loop was used
 		}
 	}
 	
@@ -126,11 +126,6 @@ public:
 		int groupNum{0};
 		int numPerms{0};
 		vector<int> groupList;
-
-	if(groupList.Size() == 0){
-			numPerm = 0;
-			return numPerm;
-		}
 
         //Going through stringData
 		for(int i = 0; i<size; i++){
@@ -155,6 +150,11 @@ public:
 		}
 		}
 
+		//If groupList is 0 returns 0
+		if(groupList.Size() == 0){
+			numPerm = 0;
+			return numPerm;
+		}
 		//Calculates from groupList the number the of permutations 		
 		//loops through groupList 
 		for(int i = 0; i<groupList.size(); i++){
@@ -186,12 +186,12 @@ private:
 		this->str = str;
 	}
 
-	// getters
+	// getter
 	string getStr(){
 		return str;
 	}
 
-	// setters
+	// setter
 	void setStr(string str){
 		this->str = str;
 	}
