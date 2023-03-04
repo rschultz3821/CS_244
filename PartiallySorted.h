@@ -31,7 +31,7 @@ public:
 		//Go through
 		for (int i = 0; i < size; i++) {
 			//Copy all the real items
-			stringData[i] = other.data[i];
+			stringData[i] = other.stringData[i];
 		}
 	}
 
@@ -47,7 +47,7 @@ public:
 		//Go through
 		for (int i = 0; i < size; i++) {
 			//Copy all the real items
-			stringData[i] = other.data[i];
+			stringData[i] = other.stringData[i];
 		}
 	}
 	void expand() {

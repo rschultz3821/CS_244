@@ -19,3 +19,12 @@ int main() {
 	// test > - if first is greater than 
 	// test < - if first is less than
 }
+
+// Test partially sorted String
+	PartiallySortedString str {"testing"};
+	// test getters
+	// test setters
+	// test == - true if same length and same characters in order
+	// test |= - true if same length
+	// test > - if first is greater than 
+	// test < - if first is less than
