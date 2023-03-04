@@ -124,7 +124,13 @@ public:
 
 	int CountPermutations(){
 		int groupNum{0};
+		int numPerms{0};
 		vector<int> groupList;
+
+	if(groupList.Size() == 0){
+			numPerm = 0;
+			return numPerm;
+		}
 
         //Going through stringData
 		for(int i = 0; i<size; i++){
@@ -149,18 +155,22 @@ public:
 		}
 		}
 
-		//Calculates from groupList the number the of permutations 
-		int numPerms{0};
+		//Calculates from groupList the number the of permutations 		
 		//loops through groupList 
 		for(int i = 0; i<groupList.size(); i++){
-
+			int num = groupList.add(i);
 			//calculates factorial of i
-			for(int j = 1; j <= i; ++j) {
-            int num *= j;
+			for(int j = num; j > 1; --j) {
+             num *= j;
         }
+			//Initializes numPerms starting value
+			if(i == 0 ){
+			numPerm = num;
+			}
 			//multiples the num each time
 			numPerms *= num;
 		}
+		//Return number of permutations 
 		return numPerms;
 	}
 };
