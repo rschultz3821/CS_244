@@ -178,40 +178,29 @@ public:
 class PartiallySortedString{
 private:
 	// Fields
-	string strA;
-	string strB;
+	string str;
 
 private:
 	// constructor
-	PartiallySortedString(string strA, string strB){
-		this->strA = strA;
-		this->strB = strB;
+	PartiallySortedString(string str){
+		this->str = str;
 	}
 
 	// getters
-	string getStrA(){
-		return strA;
-	}
-
-	string getStrB(){
-		return strB;
+	string getStr(){
+		return str;
 	}
 
 	// setters
-	void setStrA(string strA){
-		this->strA = strA;
+	void setStr(string str){
+		this->str = str;
 	}
 
-	void setStrB(string strB){
-		this->strB = strB;
-	}
-
-	
 	//== (two strings have exactly the same characters)
 	bool operator==(const PartiallySortedString& other){
-		if(strA.length() == strB.length()){
-			for(int i=0;i<strA.length();i++){
-				if(strA[i] == strB[i]){
+		if(str.length() == other.str.length()){
+			for(int i=0;i<str.length();i++){
+				if(str[i] == other.str[i]){
 					return true;
 			}
 		}
@@ -220,21 +209,21 @@ private:
 
 	//|= (incomparability)
 	bool operator|=(const PartiallySortedString& other){
-		if(strA.length() == strB.length()){
+		if(str.length() == other.str.length()){
 					return true;
 			}
 	}
 
 	//>
 	bool operator>(const PartiallySortedString& other){
-		if(strA.length() > strB.length()){
+		if(str.length() > other.str.length()){
 					return true;
 			}
 	}
 
 	//<
 	bool operator<(const PartiallySortedString& other){
-		if(strA.length() < strB.length()){
+		if(str.length() < other.str.length()){
 					return true;
 			}
 	}
