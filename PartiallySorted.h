@@ -161,11 +161,11 @@ public:
 			int num = groupList.add(i);
 			//calculates factorial of i
 			for(int j = num; j > 1; --j) {
-             num *= j;
+            	num *= j;
         }
 			//Initializes numPerms starting value
 			if(i == 0 ){
-			numPerm = num;
+				numPerm = num;
 			}
 			//multiples the num each time
 			numPerms *= num;
