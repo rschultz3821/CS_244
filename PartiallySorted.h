@@ -13,7 +13,7 @@ private:
 
 public:
 
-	//Empty Constructor
+	//Constructor
 	PartiallySortedList() {
 		stringData = new string[capacity];
 	}
