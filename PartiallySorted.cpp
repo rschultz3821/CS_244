@@ -21,7 +21,8 @@ int main() {
 }
 
 // Test partially sorted String
-	PartiallySortedString str1 = PartiallySortedString("testing"); 
+	PartiallySorted::PartiallySortedString str1 = PartiallySorted::PartiallySortedString{};
+	str1.setStr("testing"); 
 	// test getters
 	// test setters
 	// test == - true if same length and same characters in order
