@@ -188,6 +188,7 @@ private:
 		this->strB = strB;
 	}
 
+	// getters
 	string getStrA(){
 		return strA;
 	}
@@ -196,7 +197,16 @@ private:
 		return strB;
 	}
 
+	// setters
+	void setStrA(string strA){
+		this->strA = strA;
+	}
 
+	void setStrB(string strB){
+		this->strB = strB;
+	}
+
+	
 	//== (two strings have exactly the same characters)
 	bool operator==(const PartiallySortedString& other){
 		if(strA.length() == strB.length()){
