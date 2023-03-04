@@ -204,27 +204,31 @@ private:
 					return true;
 			}
 		}
+		return false;
 	}
 	}
 
 	//|= (incomparability)
 	bool operator|=(const PartiallySortedString& other){
 		if(str.length() == other.str.length()){
-					return true;
-			}
+			return true;
+		}
+		return false;
 	}
 
 	//>
 	bool operator>(const PartiallySortedString& other){
 		if(str.length() > other.str.length()){
-					return true;
-			}
+			return true;
+		}
+		return false;
 	}
 
 	//<
 	bool operator<(const PartiallySortedString& other){
 		if(str.length() < other.str.length()){
-					return true;
-			}
+			return true;
+		}
+		return false;
 	}
 };
