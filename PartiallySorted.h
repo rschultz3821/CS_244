@@ -164,3 +164,7 @@ public:
 		return numPerms;
 	}
 };
+
+class PartiallySortedString{
+	
+};
