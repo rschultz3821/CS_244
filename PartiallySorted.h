@@ -142,7 +142,7 @@ public:
 
 				//once the lengths don't match it pushes the groupNum into a vector
 			}else{
-				groupList.pushBack(groupNum);
+				groupList.push_back(groupNum);
 				
 				//resets current for comparision
 				current = stringData[i].length;
