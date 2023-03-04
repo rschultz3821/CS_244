@@ -9,8 +9,8 @@ class PartiallySortedList {
 private:
 	//Fields
 	string* stringData;
-	int size{0}; //TODO maybe initialize
-	int capacity{10};
+	int size{ 0 }; //TODO maybe initialize
+	int capacity{ 10 };
 
 public:
 
@@ -91,7 +91,7 @@ public:
 				// Check if the value should be inserted at the given index or continue looping
 				if (stringData[i].length >= value.length) {
 					// Loop to make room for the new value being inserted
-					for (int j = size; j > i; j--) { 
+					for (int j = size; j > i; j--) {
 						// Moves the current index back one slot in the array
 						stringData[j] = stringData[j - 1];
 					}
@@ -114,7 +114,7 @@ public:
 			return 'c'; // could be used to make a distinction of when the entire loop was used
 		}
 	}
-	
+
 	string get(int index) {
 		return stringData[index];
 	}
@@ -123,51 +123,53 @@ public:
 		return size;
 	}
 
-	int CountPermutations(){
-		int groupNum{0};
-		int numPerms{0};
+	int CountPermutations() {
+		int groupNum{ 0 };
+		int numPerms{ 0 };
 		vector<int> groupList;
 		string* current;
 
-        //Going through stringData
-		for(int i = 0; i<size; i++){
-		
-		//setting current to first index
-		if(i == 0){
-			current = stringData[i].length;
-		}else{
-			//checks if current matchings the length, if so then it adds to the groupNum
-			if(current == stringData[i].length){
-				groupNum++;
+		//Going through stringData
+		for (int i = 0; i < size; i++) {
 
-				//once the lengths don't match it pushes the groupNum into a vector
-			}else{
-				groupList.push_back(groupNum);
-				
-				//resets current for comparision
+			//setting current to first index
+			if (i == 0) {
 				current = stringData[i].length;
-				//resets groupNum
-				groupNum = 1;
 			}
-		}
+			else {
+				//checks if current matchings the length, if so then it adds to the groupNum
+				if (current == stringData[i].length) {
+					groupNum++;
+
+					//once the lengths don't match it pushes the groupNum into a vector
+				}
+				else {
+					groupList.push_back(groupNum);
+
+					//resets current for comparision
+					current = stringData[i].length;
+					//resets groupNum
+					groupNum = 1;
+				}
+			}
 		}
 
 		//If groupList is 0 returns 0
-		if(groupList.Size() == 0){
-			numPerm = 0;
-			return numPerm;
+		if (groupList.size == 0) {
+			numPerms = 0;
+			return numPerms;
 		}
 		//Calculates from groupList the number the of permutations 		
 		//loops through groupList 
-		for(int i = 0; i<groupList.size(); i++){
-			int num = groupList.add(i);
+		for (int i = 0; i < groupList.size(); i++) {
+			int num = groupList.at(i);
 			//calculates factorial of i
-			for(int j = num; j > 1; --j) {
-            	num *= j;
-        }
+			for (int j = num; j > 1; --j) {
+				num *= j;
+			}
 			//Initializes numPerms starting value
-			if(i == 0 ){
-				numPerm = num;
+			if (i == 0) {
+				numPerms = num;
 			}
 			//multiples the num each time
 			numPerms *= num;
@@ -177,58 +179,58 @@ public:
 	}
 };
 
-class PartiallySortedString{
+class PartiallySortedString {
 private:
 	// Fields
 	string str;
 
 private:
 	// constructor
-	PartiallySortedString(string str){
+	PartiallySortedString(string str) {
 		this->str = str;
 	}
 
 	// getter
-	string getStr(){
+	string getStr() {
 		return str;
 	}
 
 	// setter
-	void setStr(string str){
+	void setStr(string str) {
 		this->str = str;
 	}
 
 	//== (two strings have exactly the same characters)
-	bool operator==(const PartiallySortedString& other){
-		if(str.length() == other.str.length()){
-			for(int i=0;i<str.length();i++){
-				if(str[i] == other.str[i]){
+	bool operator==(const PartiallySortedString& other) {
+		if (str.length() == other.str.length()) {
+			for (int i = 0; i < str.length(); i++) {
+				if (str[i] == other.str[i]) {
 					return true;
+				}
 			}
+			return false;
 		}
-		return false;
-	}
 	}
 
 	//|= (incomparability)
-	bool operator|=(const PartiallySortedString& other){
-		if(str.length() == other.str.length()){
+	bool operator|=(const PartiallySortedString& other) {
+		if (str.length() == other.str.length()) {
 			return true;
 		}
 		return false;
 	}
 
 	//>
-	bool operator>(const PartiallySortedString& other){
-		if(str.length() > other.str.length()){
+	bool operator>(const PartiallySortedString& other) {
+		if (str.length() > other.str.length()) {
 			return true;
 		}
 		return false;
 	}
 
 	//<
-	bool operator<(const PartiallySortedString& other){
-		if(str.length() < other.str.length()){
+	bool operator<(const PartiallySortedString& other) {
+		if (str.length() < other.str.length()) {
 			return true;
 		}
 		return false;
