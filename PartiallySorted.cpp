@@ -21,7 +21,7 @@ int main() {
 }
 
 // Test partially sorted String
-	PartiallySortedString str {"testing"};
+	PartiallySortedString str1 = PartiallySortedString("testing"); 
 	// test getters
 	// test setters
 	// test == - true if same length and same characters in order
