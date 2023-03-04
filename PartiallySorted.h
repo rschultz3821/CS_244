@@ -187,7 +187,7 @@ private:
 		this->strA = strA;
 		this->strB = strB;
 	}
-	
+
 	string getStrA(){
 		return strA;
 	}
@@ -195,8 +195,37 @@ private:
 	string getStrB(){
 		return strB;
 	}
+
+
 	//== (two strings have exactly the same characters)
+	bool operator==(const PartiallySortedString& other){
+		if(strA.length() == strB.length()){
+			for(int i=0;i<strA.length();i++){
+				if(strA[i] == strB[i]){
+					return true;
+			}
+		}
+	}
+	}
+
 	//|= (incomparability)
+	bool operator|=(const PartiallySortedString& other){
+		if(strA.length() == strB.length()){
+					return true;
+			}
+	}
+
 	//>
+	bool operator>(const PartiallySortedString& other){
+		if(strA.length() > strB.length()){
+					return true;
+			}
+	}
+
 	//<
+	bool operator<(const PartiallySortedString& other){
+		if(strA.length() < strB.length()){
+					return true;
+			}
+	}
 };
