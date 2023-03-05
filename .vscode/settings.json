@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "arraylist"
-    ]
+    ],
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
