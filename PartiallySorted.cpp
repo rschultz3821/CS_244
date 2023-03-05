@@ -15,17 +15,12 @@ int main() {
 	// test getters
 	// test setters
 	// test == - true if same length and same characters in order
+	PartiallySortedString str = PartiallySortedString {"testing"};
+	if(str.getStr() != "testing"){
+		
+	}
+
 	// test |= - true if same length
 	// test > - if first is greater than 
 	// test < - if first is less than
 }
-
-// Test partially sorted String
-	PartiallySorted::PartiallySortedString str1 = PartiallySorted::PartiallySortedString{};
-	str1.setStr("testing"); 
-	// test getters
-	// test setters
-	// test == - true if same length and same characters in order
-	// test |= - true if same length
-	// test > - if first is greater than 
-	// test < - if first is less than

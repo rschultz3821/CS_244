@@ -184,7 +184,7 @@ private:
 	// Fields
 	string str;
 
-private:
+public:
 	// constructor
 	PartiallySortedString(string str) {
 		this->str = str;
