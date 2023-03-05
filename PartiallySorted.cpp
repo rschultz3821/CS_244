@@ -2,10 +2,12 @@
 #include<string>
 #include "PartiallySorted.h"
 using namespace std;
-
+template <typename T>
 int main() {
 	// Test partially sorted list
 	// Test get - returns expected value
+	PartiallySortedList list1{};
+	
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
 	// Test Count permutations - check if grouplist is size 0
