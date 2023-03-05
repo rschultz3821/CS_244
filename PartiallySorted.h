@@ -89,7 +89,7 @@ public:
 			// Loop through stringData until a suitable spot is found
 			for (int i = 0; i < size; i++) {
 				// Check if the value should be inserted at the given index or continue looping
-				if (stringData[i].length >= value.length) {
+				if (stringData[i].length >= value.length) { // BIG ISSUE
 					// Loop to make room for the new value being inserted
 					for (int j = size; j > i; j--) {
 						// Moves the current index back one slot in the array
