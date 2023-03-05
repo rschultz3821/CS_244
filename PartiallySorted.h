@@ -1,4 +1,4 @@
-#pragma once
+#pragma once 
 #include <iostream>
 #include<string>
 #include<vector>
@@ -8,7 +8,7 @@ template <typename T>
 class PartiallySortedList {
 private:
 	//Fields
-	T* stringData;
+	string* stringData;
 	int size{ 0 }; //TODO maybe initialize
 	int capacity{ 10 };
 
@@ -16,7 +16,7 @@ public:
 
 	//Constructor
 	PartiallySortedList() {
-		stringData = new T[capacity];
+		stringData = new string[capacity];
 	}
 
 	//Destructor
@@ -25,10 +25,10 @@ public:
 	}
 
 	//Copy constructor
-	PartiallySortedList(const PartiallySortedList<T>& other) {
+	PartiallySortedList(const PartiallySortedList<string>& other) {
 		capacity = other.capacity;
 		size = other.size;
-		stringData = new T[capacity];
+		stringData = new string[capacity];
 		//Go through
 		for (int i = 0; i < size; i++) {
 			//Copy all the real items
@@ -37,14 +37,14 @@ public:
 	}
 
 	//Copy assignment operator
-	PartiallySortedList operator=(const PartiallySortedList<T>& other) {
+	PartiallySortedList operator=(const PartiallySortedList<string>& other) {
 		//Delete old stuff
 		delete[] stringData;
 
 		//Mimic the copy constructor
 		capacity = other.capacity;
 		size = other.size;
-		stringData = new T[capacity];
+		stringData = new string[capacity];
 		//Go through
 		for (int i = 0; i < size; i++) {
 			//Copy all the real items
@@ -53,7 +53,7 @@ public:
 	}
 	void expand() {
 
-		T* tmp = new T[capacity * 2];
+		string* tmp = new string[capacity * 2];
 		//Copy contents
 		for (int i = 0; i < capacity; i++) {
 			tmp[i] = stringData[i];
@@ -71,7 +71,7 @@ public:
 	* it has the same length or a larger length than value's length. Otherwise it should
 	* be added at the end of the arraylist.
 	*/
-	char add(T value) {
+	char add(string value) {
 		// Check if the capacity of the arraylist needs to be expanded
 		if (size + 1 > capacity) {
 			this->expand();
@@ -115,7 +115,7 @@ public:
 		}
 	}
 
-	T get(int index) {
+	string get(int index) {
 		return stringData[index];
 	}
 
@@ -127,7 +127,7 @@ public:
 		int groupNum{ 0 };
 		int numPerms{ 0 };
 		vector<int> groupList;
-		T* current;
+		string* current;
 
 		//Going through stringData
 		for (int i = 0; i < size; i++) {
