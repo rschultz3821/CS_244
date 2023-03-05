@@ -57,7 +57,6 @@ void listTest() {
 	// Test partially sorted list
 	PartiallySortedList<string> list1{};
 	// Test get - returns expected value
-	
 
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
