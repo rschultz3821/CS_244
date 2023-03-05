@@ -3,7 +3,8 @@
 #include "PartiallySorted.h"
 using namespace std;
 
-void PartiallySortedStringTesting() {
+// STRING TESTING
+void partiallySortedStringTesting() {
 	// Test partially sorted String
 	cout << "PartiallySortedString tests" << endl << "************" << endl;
 
@@ -50,14 +51,20 @@ void PartiallySortedStringTesting() {
 	}
 }
 
+// LIST TESTING
+template <typename T>
+void listTest() {
+	PartiallySortedList<string> list1{};
+}
+
 int main() {
 	// Test partially sorted list
 	// Test get - returns expected value
-	PartiallySortedList list1{};
 	
+
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
 	// Test Count permutations - check if grouplist is size 0
 
-	PartiallySortedStringTesting();
+	partiallySortedStringTesting();
 };
