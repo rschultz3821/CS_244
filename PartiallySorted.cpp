@@ -52,7 +52,7 @@ void partiallySortedStringTesting() {
 }
 
 // LIST TESTING
-template <typename T>
+//template <typename T>
 void listTest() {
 	// Test partially sorted list
 	PartiallySortedList<string> list1{};
@@ -63,6 +63,7 @@ void listTest() {
 }
 
 int main() {
+	listTest();
 	partiallySortedStringTesting();
 
 };
