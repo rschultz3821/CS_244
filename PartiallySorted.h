@@ -13,7 +13,6 @@ private:
 	int capacity{ 10 };
 
 public:
-
 	//Constructor
 	PartiallySortedList() {
 		stringData = new string[capacity];
