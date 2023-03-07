@@ -1,11 +1,8 @@
 #include <iostream>
 #include <string>
+#include <array>
 #include "PartiallySorted.h"
 using namespace std;
-
-// Prototypes
-void runListTests();
-void testAdd();
 
 // STRING TESTING
 void partiallySortedStringTesting() {
@@ -55,31 +52,41 @@ void partiallySortedStringTesting() {
 	}
 }
 
-// Runs tests
-int main() {
-	runListTests();
-	partiallySortedStringTesting();
-};
-
 // LIST TESTING
-template <typename T>
-
-// This tests add, expand , and getSize
-void testAdd(){
-	array<string, 11> strArr["checkmate in 2", "11 hats" , "12 Monkeys", "300 camels", 
-		"water bottle", "penguin", "pug", "tiger", "apple", "grape", "hi"];
-	for(int i = 0; i < strArr.size(); i++){
-		
-	}
-}
-
+// Test partially sorted list
 void runListTests() {
-	// Test partially sorted list
-	PartiallySortedList<string> list1{};
-	testAdd();
-
-	// Test get - returns expected value
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
+	/*
+	* This tests add, expand, and getSize - this is because this method adds strings to the arraylist, 
+	* checks the size, and has to expand the arraylist to get to 11.
+	*/
+	PartiallySortedList<string> list1{};
+	array<string, 11> strArr = { "checkmate in 2", "11 hats", "12 Monkeys", "300 camels", "water bottle",
+		"penguin", "pug", "tiger", "apple", "grape", "hi" };
+
+	cout << "--------------------------------------------------------------------------------------------------------------------\n";
+	cout << "Running list tests\n";
+	for (int i = 0; i < strArr.size(); i++) {
+		list1.add(strArr[i]);
+		if (list1.getSize() == i + 1) {
+			cout << "Success! The current size is " << list1.getSize() << " it should be " << i + 1 << endl;
+		}
+		else {
+			cout << "Failed! The current size is " << list1.getSize() << " it should be " << i + 1 << endl;
+		}
+	}
+
+
+	// Test get - returns expected value	
 	// Test Count permutations - check if grouplist is size 0
 }
+
+// Runs tests
+int main() {
+	partiallySortedStringTesting();
+	cout << "\n\n";
+	runListTests();
+};
+
+
