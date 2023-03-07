@@ -207,6 +207,8 @@ public:
 					return true;
 				}
 			}
+		}
+		else {
 			return false;
 		}
 	}
@@ -214,9 +216,15 @@ public:
 	//|= (incomparability)
 	bool operator|=(const PartiallySortedString& other) {
 		if (str.length() == other.str.length()) {
-			return true;
+			for (int i = 0; i < str.length(); i++) {
+				if (str[i] != other.str[i]) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
 		}
-		return false;
 	}
 
 	//>
@@ -224,7 +232,9 @@ public:
 		if (str.length() > other.str.length()) {
 			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
 	}
 
 	//<
@@ -232,6 +242,9 @@ public:
 		if (str.length() < other.str.length()) {
 			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
 	}
 };
+;

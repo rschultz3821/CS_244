@@ -34,9 +34,12 @@ void partiallySortedStringTesting() {
 	}
 
 	// test |= - true if same length
-	str3.setStr("test");
+	str3.setStr("rest");
 	if (str2 |= str3) {
 		cout << "Operator|= success" << endl;
+	}
+	else {
+		cout << "operator|= not working properly" << endl;
 	}
 
 	// test > - if first is greater than 
@@ -48,7 +51,46 @@ void partiallySortedStringTesting() {
 	// test < - if first is less than
 	str3.setStr("testing");
 	if (str2 < str3) {
+		cout << "Operator< success" << endl << endl;
+	}
+
+	PartiallySortedString str5{ "6 cups of coffee" };
+	PartiallySortedString str6{ "6 cups of coffee" };
+	PartiallySortedString str7{ "6 cups of coffees" };
+
+	if (str6 == str7) {
+		cout << "Operator== success" << endl;
+	}
+	else {
+		cout << "Operator== fails successfully" << endl;
+	}
+
+	if (str6 == str7) {
+		cout << "Operator== success" << endl;
+	}
+	else {
+		cout << "Operator== fails successfully" << endl;
+	}
+
+	if (str5 |= str6) {
+		cout << "Operator|= success" << endl;
+	}
+	else {
+		cout << "Operator|= fails successfully" << endl;
+	}
+
+	if (str5 > str7) {
+		cout << "Operator> success" << endl;
+	}
+	else {
+		cout << "Operator> fails successfully" << endl;
+	}
+
+	if (str7 < str5) {
 		cout << "Operator< success" << endl;
+	}
+	else {
+		cout << "Operator< fails successfully" << endl;
 	}
 }
 
@@ -58,7 +100,7 @@ void runListTests() {
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
 	/*
-	* This tests add, expand, and getSize - this is because this method adds strings to the arraylist, 
+	* This tests add, expand, and getSize - this is because this method adds strings to the arraylist,
 	* checks the size, and has to expand the arraylist to get to 11.
 	*/
 	PartiallySortedList<string> list1{};
@@ -83,7 +125,7 @@ void runListTests() {
 	// spacing
 	cout << "\nTest if get works correctly" << endl;
 	// Test get - returns expected value	
-	array<string, 11> newStrArr = { "hi", "pug", "grape", "apple", "tiger", "penguin", "11 hats", "300 camels", 
+	array<string, 11> newStrArr = { "hi", "pug", "grape", "apple", "tiger", "penguin", "11 hats", "300 camels",
 		"12 Monkeys", "water bottle", "checkmate in 2" };
 	// Loop throught the array to see if get works and the values are in the correct order.
 	for (int i = 0; i < newStrArr.size(); i++) {
@@ -95,12 +137,12 @@ void runListTests() {
 			cout << "Failed! The current value in the list is " << list1.get(i) << " it should be " << newStrArr[i] << "." << endl;
 		}
 	}
-	
+
 	// Test Count permutations - check if grouplist is size 0
 	if (list1.CountPermutations() == 76) {
 		cout << "Success! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
 	}
-	else{
+	else {
 		cout << "Failed! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
 	}
 }
@@ -111,5 +153,4 @@ int main() {
 	cout << "\n\n";
 	runListTests();
 };
-
 
