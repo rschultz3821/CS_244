@@ -1,3 +1,9 @@
+/**
+ * This is the test class for partially sorted list and string. 
+ * 
+ * @authors Rachel Schultz and Mason Campbell
+ * @version 3/7/2023
+*/
 #include <iostream>
 #include <string>
 #include <array>
@@ -94,7 +100,8 @@ void runListTests() {
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
 	/*
 	* This tests add, expand, and getSize - this is because this method adds strings to the arraylist,
-	* checks the size, and has to expand the arraylist to get to 11.
+	* checks the size, and has to expand the arraylist to get to 11. Also none of this would be possible without
+	* the constructor, so it is alos testing the constructor
 	*/
 	PartiallySortedList<string> list1{};
 	array<string, 11> strArr = { "checkmate in 2", "11 hats", "12 Monkeys", "300 camels", "water bottle",
@@ -131,8 +138,10 @@ void runListTests() {
 		}
 	}
 
+	// make a variable so we only call countPermutations once
 	int perms{ list1.CountPermutations() };
 	
+	// spacing
 	cout << endl;
 
 	// Test Count permutations - check if grouplist is size 0
@@ -142,15 +151,22 @@ void runListTests() {
 	else {
 		cout << "Failed! The current number of permutations is " << perms << " it should be " << 24 << "." << endl;
 	}
+
+	// spacing
 	cout << endl;
+
+	// test factorial method
 	cout << "Factorial test 5! = 120 comes out to be: " << list1.factorial(5) << endl;
 	cout << "Factorial test 4! = 24 comes out to be: " << list1.factorial(4) << endl;
 }
 
 // Runs tests
 int main() {
+	// tests ps string
 	partiallySortedStringTesting();
+	// spacing
 	cout << "\n\n";
+	// tests ps lists
 	runListTests();
 };
 
