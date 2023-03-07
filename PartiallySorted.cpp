@@ -57,14 +57,7 @@ void partiallySortedStringTesting() {
 	PartiallySortedString str5{ "6 cups of coffee" };
 	PartiallySortedString str6{ "6 cups of coffee" };
 	PartiallySortedString str7{ "6 cups of coffees" };
-
-	if (str6 == str7) {
-		cout << "Operator== success" << endl;
-	}
-	else {
-		cout << "Operator== fails successfully" << endl;
-	}
-
+	//Testing operators to make sure they FAIL
 	if (str6 == str7) {
 		cout << "Operator== success" << endl;
 	}
