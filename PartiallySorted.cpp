@@ -3,6 +3,9 @@
 #include "PartiallySorted.h"
 using namespace std;
 
+// Prototypes
+void runListTests();
+
 // STRING TESTING
 void partiallySortedStringTesting() {
 	// Test partially sorted String
@@ -51,19 +54,21 @@ void partiallySortedStringTesting() {
 	}
 }
 
+int main() {
+	runListTests();
+	partiallySortedStringTesting();
+};
+
 // LIST TESTING
-//template <typename T>
-void listTest() {
+template <typename T>
+
+void runListTests() {
 	// Test partially sorted list
 	PartiallySortedList<string> list1{};
+	
+
 	// Test get - returns expected value
 	// Test getSize - returns expected size(could test in add)
 	// Test add - expand? - size 0 return false - check if it made it to a certain char ending
 	// Test Count permutations - check if grouplist is size 0
 }
-
-int main() {
-	listTest();
-	partiallySortedStringTesting();
-
-};
