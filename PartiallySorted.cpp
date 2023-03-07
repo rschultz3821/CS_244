@@ -131,13 +131,20 @@ void runListTests() {
 		}
 	}
 
+	int perms{ list1.CountPermutations() };
+	
+	cout << endl;
+
 	// Test Count permutations - check if grouplist is size 0
-	if (list1.CountPermutations() == 76) {
-		cout << "Success! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
+	if (perms == 24) {
+		cout << "Success! The current number of permutations is " << perms << " it should be " << 24 << "." << endl;
 	}
 	else {
-		cout << "Failed! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
+		cout << "Failed! The current number of permutations is " << perms << " it should be " << 24 << "." << endl;
 	}
+	cout << endl;
+	cout << "Factorial test 5! = 120 comes out to be: " << list1.factorial(5) << endl;
+	cout << "Factorial test 4! = 24 comes out to be: " << list1.factorial(4) << endl;
 }
 
 // Runs tests

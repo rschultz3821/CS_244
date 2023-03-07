@@ -126,55 +126,70 @@ public:
 		int groupNum{ 0 };
 		int numPerms{ 0 };
 		vector<int> groupList;
-		string current;
+		int current{ 0 };
 
 		//Going through stringData
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i <= getSize(); i++) {
 
-			//setting current to first index
-			if (i == 0) {
-				current = stringData[i];
+			// If the last index occurs add it to the group and stop.
+			if (i == getSize()) {
+				// Puts the number of people in a group into the vector
+				groupList.push_back(groupNum);
 			}
 			else {
-				//checks if current matchings the length, if so then it adds to the groupNum
-				if (current.length() == stringData[i].length()) {
+				//setting current to first index
+				if (i == 0) {
+					current = stringData[i].length();
 					groupNum++;
-
-					//once the lengths don't match it pushes the groupNum into a vector
 				}
 				else {
-					groupList.push_back(groupNum);
+					//checks if current matchings the length, if so then it adds to the groupNum
+					if (current == stringData[i].length()) {
+						groupNum++;
 
-					//resets current for comparision
-					current = stringData[i].length();
-					//resets groupNum
-					groupNum = 1;
+						//once the lengths don't match it pushes the groupNum into a vector
+					}
+					else {
+						// Puts the number of people in a group into the vector
+						groupList.push_back(groupNum);
+						//resets current for comparision
+						current = stringData[i].length();
+						//resets groupNum
+						groupNum = 1;
+					}
 				}
 			}
+
+			
 		}
 
 		//If groupList is 0 returns 0
-		if (groupList.size() == 0) { // FIXME
+		if (groupList.size() == 0) {
 			numPerms = 0;
 			return numPerms;
 		}
 		//Calculates from groupList the number the of permutations 		
 		//loops through groupList 
 		for (int i = 0; i < groupList.size(); i++) {
+			if (i == 0) {
+				numPerms = groupList.at(0);
+			}
 			int num = groupList.at(i);
 			//calculates factorial of i
-			for (int j = num; j > 1; --j) {
-				num *= j;
-			}
-			//Initializes numPerms starting value
-			if (i == 0) {
-				numPerms = num;
-			}
-			//multiples the num each time
-			numPerms *= num;
+			numPerms *= factorial(num);
 		}
 		//Return number of permutations 
 		return numPerms;
+	}
+
+	// calculates factorial using recursion
+	int factorial(int val) {
+		// base case - stopping point
+		if (val == 1) {
+			return val; // or return 1 it wouldn't matter since they are the same
+		}
+		// return the factorial times the current so it progressively gets smaller
+		return val * factorial(val - 1);
 	}
 };
 
