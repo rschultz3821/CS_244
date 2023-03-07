@@ -101,7 +101,7 @@ void runListTests() {
 	/*
 	* This tests add, expand, and getSize - this is because this method adds strings to the arraylist,
 	* checks the size, and has to expand the arraylist to get to 11. Also none of this would be possible without
-	* the constructor, so it is alos testing the constructor
+	* the constructor, so it is also testing the constructor
 	*/
 	PartiallySortedList<string> list1{};
 	array<string, 11> strArr = { "checkmate in 2", "11 hats", "12 Monkeys", "300 camels", "water bottle",

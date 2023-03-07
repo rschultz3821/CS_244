@@ -1,8 +1,8 @@
-/*Challenge Problem 2 - PartiallySorted ArrayList
-//@authors: Mason Campbell & Rachel Schultz
-//@version 3/7/23
-//This is the Header class for PartiallySorted
-//Included is PartiallySortedList class and PartiallySortedString class
+/* Challenge Problem 2 - PartiallySorted ArrayList
+* @authors: Mason Campbell & Rachel Schultz
+* @version 3/7/23
+* This is the Header class for PartiallySorted
+* Included is PartiallySortedList class and PartiallySortedString class
 */
 
 #pragma once 
@@ -77,7 +77,7 @@ public:
 	* it has the same length or a larger length than value's length. Otherwise it should
 	* be added at the end of the arraylist.
 	*/
-	char add(string value) { //O(N^3) -> two for loops O(N) + expand method O(N), rest goes away
+	char add(string value) { //O(N^2) -> two nested for loops O(N), expand method O(N) does not matter, rest goes away
 		// Check if the capacity of the arraylist needs to be expanded
 		if (size + 1 > capacity) { 
 			this->expand(); //O(N)
