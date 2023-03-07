@@ -154,7 +154,7 @@ public:
 		}
 
 		//If groupList is 0 returns 0
-		if (groupList.size() == 0) {
+		if (groupList.size() == 0) { // FIXME
 			numPerms = 0;
 			return numPerms;
 		}
