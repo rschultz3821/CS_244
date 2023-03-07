@@ -120,7 +120,7 @@ void runListTests() {
 	// Test get - returns expected value	
 	array<string, 11> newStrArr = { "hi", "pug", "grape", "apple", "tiger", "penguin", "11 hats", "300 camels",
 		"12 Monkeys", "water bottle", "checkmate in 2" };
-	// Loop throught the array to see if get works and the values are in the correct order.
+	// Loop through the array to see if get works and the values are in the correct order.
 	for (int i = 0; i < newStrArr.size(); i++) {
 		// Checks whether the values are in the correct order or not. 
 		if (list1.get(i) == newStrArr[i]) {

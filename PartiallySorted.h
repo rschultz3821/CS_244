@@ -1,3 +1,10 @@
+/*Challenge Problem 2 - PartiallySorted ArrayList
+//@authors: Mason Campbell & Rachel Schultz
+//@version 3/7/23
+//This is the Header class for PartiallySorted
+//Included is PartiallySortedList class and PartiallySortedString class
+*/
+
 #pragma once 
 #include <iostream>
 #include <string>
@@ -122,15 +129,14 @@ public:
 		return size;
 	}
 
-	int CountPermutations() {
+	int CountPermutations() {  //O(NlogN)
 		int groupNum{ 0 };
 		int numPerms{ 0 };
 		vector<int> groupList;
 		int current{ 0 };
 
 		//Going through stringData
-		for (int i = 0; i <= getSize(); i++) {
-
+		for (int i = 0; i <= getSize(); i++) {  //O(N)
 			// If the last index occurs add it to the group and stop.
 			if (i == getSize()) {
 				// Puts the number of people in a group into the vector
@@ -170,7 +176,7 @@ public:
 		}
 		//Calculates from groupList the number the of permutations 		
 		//loops through groupList 
-		for (int i = 0; i < groupList.size(); i++) {
+		for (int i = 0; i < groupList.size(); i++) { //O(N)
 			if (i == 0) {
 				numPerms = groupList.at(0);
 			}
@@ -183,7 +189,7 @@ public:
 	}
 
 	// calculates factorial using recursion
-	int factorial(int val) {
+	int factorial(int val) { //O(logN)
 		// base case - stopping point
 		if (val == 1) {
 			return val; // or return 1 it wouldn't matter since they are the same
