@@ -5,6 +5,7 @@ using namespace std;
 
 // Prototypes
 void runListTests();
+void testAdd();
 
 // STRING TESTING
 void partiallySortedStringTesting() {
@@ -54,6 +55,7 @@ void partiallySortedStringTesting() {
 	}
 }
 
+// Runs tests
 int main() {
 	runListTests();
 	partiallySortedStringTesting();
@@ -62,10 +64,15 @@ int main() {
 // LIST TESTING
 template <typename T>
 
+// This tests add, expand , and getSize
+void testAdd(){
+	array<string, 11> strArr["checkmate in 2", "11 hats" , "12 Monkeys", "3 camels", ];
+}
+
 void runListTests() {
 	// Test partially sorted list
 	PartiallySortedList<string> list1{};
-	
+	testAdd();
 
 	// Test get - returns expected value
 	// Test getSize - returns expected size(could test in add)
