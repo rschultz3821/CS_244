@@ -67,19 +67,39 @@ void runListTests() {
 
 	cout << "--------------------------------------------------------------------------------------------------------------------\n";
 	cout << "Running list tests\n";
+	cout << "Test if getSize, expand, and add all work correctly" << endl;
+	// Loop through the array to add all the strings to the arraylist
 	for (int i = 0; i < strArr.size(); i++) {
+		// add strings to the array list
 		list1.add(strArr[i]);
+		// Check if the current size of the array is correct or not
 		if (list1.getSize() == i + 1) {
-			cout << "Success! The current size is " << list1.getSize() << " it should be " << i + 1 << endl;
+			cout << "Success! The current size is " << list1.getSize() << " it should be " << i + 1 << "." << endl;
 		}
 		else {
-			cout << "Failed! The current size is " << list1.getSize() << " it should be " << i + 1 << endl;
+			cout << "Failed! The current size is " << list1.getSize() << " it should be " << i + 1 << "." << endl;
 		}
 	}
-
-
+	// spacing
+	cout << "\nTest if get works correctly" << endl;
 	// Test get - returns expected value	
+	array<string, 11> newStrArr = { "hi", "pug", "grape", "apple", "tiger", "penguin", "11 hats", "300 camels", 
+		"12 Monkeys", "water bottle", "checkmate in 2" };
+	// Loop throught the array to see if get works and the values are in the correct order.
+	for (int i = 0; i < newStrArr.size(); i++) {
+		// Checks whether the values are in the correct order or not. 
+		if (list1.get(i) == newStrArr[i]) {
+			cout << "Success! The current value in the list is " << list1.get(i) << " it should be " << newStrArr[i] << "." << endl;
+		}
+		else {
+			cout << "Failed! The current value in the list is " << list1.get(i) << " it should be " << newStrArr[i] << "." << endl;
+		}
+	}
+	
 	// Test Count permutations - check if grouplist is size 0
+	if (list1.CountPermutations() == 76) {
+		cout << "Success! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
+	}
 }
 
 // Runs tests
