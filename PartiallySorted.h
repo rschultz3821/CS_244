@@ -14,29 +14,29 @@ private:
 
 public:
 	//Constructor
-	PartiallySortedList() {
+	PartiallySortedList() { //O(1)
 		stringData = new string[capacity];
 	}
 
 	//Destructor
-	~PartiallySortedList() {
+	~PartiallySortedList() { //O(1)
 		delete[] stringData;
 	}
 
 	//Copy constructor
-	PartiallySortedList(const PartiallySortedList<string>& other) {
+	PartiallySortedList(const PartiallySortedList<string>& other) { //O(N) ->for loop, rest goes away
 		capacity = other.capacity;
 		size = other.size;
 		stringData = new string[capacity];
 		//Go through
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) { //O(N)
 			//Copy all the real items
 			stringData[i] = other.stringData[i];
 		}
 	}
 
 	//Copy assignment operator
-	PartiallySortedList operator=(const PartiallySortedList<string>& other) {
+	PartiallySortedList operator=(const PartiallySortedList<string>& other) { //O(N) ->for loop, rest goes away
 		//Delete old stuff
 		delete[] stringData;
 
@@ -50,11 +50,11 @@ public:
 			stringData[i] = other.stringData[i];
 		}
 	}
-	void expand() {
+	void expand() { //O(N) -> for loop, rest goes away
 
 		string* tmp = new string[capacity * 2];
 		//Copy contents
-		for (int i = 0; i < capacity; i++) {
+		for (int i = 0; i < capacity; i++) { //O(N)
 			tmp[i] = stringData[i];
 		}
 		//Delete the old data
@@ -70,14 +70,14 @@ public:
 	* it has the same length or a larger length than value's length. Otherwise it should
 	* be added at the end of the arraylist.
 	*/
-	char add(string value) {
+	char add(string value) { //O(N^3) -> two for loops O(N) + expand method O(N), rest goes away
 		// Check if the capacity of the arraylist needs to be expanded
-		if (size + 1 > capacity) {
-			this->expand();
+		if (size + 1 > capacity) { 
+			this->expand(); //O(N)
 		}
 
 		// Check if size is equal to 0 and there is nothing to compare values length to
-		if (size == 0) {
+		if (size == 0) { 
 			// insert value at the first slot in the arraylist since it is currently empty
 			stringData[0] = value;
 			// increment size since a new value was added
@@ -86,11 +86,11 @@ public:
 		}
 		else {
 			// Loop through stringData until a suitable spot is found
-			for (int i = 0; i < size; i++) {
+			for (int i = 0; i < size; i++) { //O(N)
 				// Check if the value should be inserted at the given index or continue looping
-				if (stringData[i].length() >= value.length()) { // BIG ISSUE
+				if (stringData[i].length() >= value.length()) { 
 					// Loop to make room for the new value being inserted
-					for (int j = size; j > i; j--) {
+					for (int j = size; j > i; j--) { //O(N)
 						// Moves the current index back one slot in the array
 						stringData[j] = stringData[j - 1];
 					}
@@ -114,11 +114,11 @@ public:
 		}
 	}
 
-	string get(int index) {
+	string get(int index) { //O(1)
 		return stringData[index];
 	}
 
-	int getSize() {
+	int getSize() { //O(1)
 		return size;
 	}
 
@@ -185,25 +185,25 @@ private:
 
 public:
 	// constructor
-	PartiallySortedString(string str) {
+	PartiallySortedString(string str) { //O(1)
 		this->str = str;
 	}
 
 	// getter
-	string getStr() {
+	string getStr() { //O(1)
 		return str;
 	}
 
 	// setter
-	void setStr(string str) {
+	void setStr(string str) { //O(1)
 		this->str = str;
 	}
 
 	//== (two strings have exactly the same characters)
-	bool operator==(const PartiallySortedString& other) {
+	bool operator==(const PartiallySortedString& other) { //O(N) -> for loop the rest doesn't matter
 		if (str.length() == other.str.length()) {
-			for (int i = 0; i < str.length(); i++) {
-				if (str[i] == other.str[i]) {
+			for (int i = 0; i < str.length(); i++) { // O(N)
+				if (str[i] == other.str[i]) { 
 					return true;
 				}
 			}
@@ -214,8 +214,8 @@ public:
 	}
 
 	//|= (incomparability)
-	bool operator|=(const PartiallySortedString& other) {
-		if (str.length() == other.str.length()) {
+	bool operator|=(const PartiallySortedString& other) { //0(1)
+		if (str.length() == other.str.length()) { // 1 + (2 for body)
 			return true;
 			}
 			else {
@@ -224,8 +224,8 @@ public:
 	}
 
 	//>
-	bool operator>(const PartiallySortedString& other) {
-		if (str.length() > other.str.length()) {
+	bool operator>(const PartiallySortedString& other) { //O(1)
+		if (str.length() > other.str.length()) { // 1 + (2 for body)
 			return true;
 		}
 		else {
@@ -234,8 +234,8 @@ public:
 	}
 
 	//<
-	bool operator<(const PartiallySortedString& other) {
-		if (str.length() < other.str.length()) {
+	bool operator<(const PartiallySortedString& other) { //O(1) 
+		if (str.length() < other.str.length()) { //1 + (2 for body)
 			return true;
 		}
 		else {
