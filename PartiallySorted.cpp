@@ -1,3 +1,9 @@
+/**
+ * This is the test class for partially sorted list and string. 
+ * 
+ * @authors Rachel Schultz and Mason Campbell
+ * @version 3/7/2023
+*/
 #include <iostream>
 #include <string>
 #include <array>
