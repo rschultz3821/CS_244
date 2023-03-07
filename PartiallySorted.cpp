@@ -34,7 +34,7 @@ void partiallySortedStringTesting() {
 	}
 
 	// test |= - true if same length
-	str3.setStr("rest");
+	str3.setStr("test");
 	if (str2 |= str3) {
 		cout << "Operator|= success" << endl;
 	}
@@ -72,7 +72,7 @@ void partiallySortedStringTesting() {
 		cout << "Operator== fails successfully" << endl;
 	}
 
-	if (str5 |= str6) {
+	if (str6 |= str7) {
 		cout << "Operator|= success" << endl;
 	}
 	else {

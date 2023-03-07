@@ -216,15 +216,11 @@ public:
 	//|= (incomparability)
 	bool operator|=(const PartiallySortedString& other) {
 		if (str.length() == other.str.length()) {
-			for (int i = 0; i < str.length(); i++) {
-				if (str[i] != other.str[i]) {
-					return true;
-				}
-				else {
-					return false;
-				}
+			return true;
 			}
-		}
+			else {
+				return false;
+			}
 	}
 
 	//>
