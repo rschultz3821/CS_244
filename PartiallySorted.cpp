@@ -66,7 +66,11 @@ template <typename T>
 
 // This tests add, expand , and getSize
 void testAdd(){
-	array<string, 11> strArr["checkmate in 2", "11 hats" , "12 Monkeys", "3 camels", ];
+	array<string, 11> strArr["checkmate in 2", "11 hats" , "12 Monkeys", "300 camels", 
+		"water bottle", "penguin", "pug", "tiger", "apple", "grape", "hi"];
+	for(int i = 0; i < strArr.size(); i++){
+		
+	}
 }
 
 void runListTests() {
