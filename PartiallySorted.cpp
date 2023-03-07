@@ -100,6 +100,9 @@ void runListTests() {
 	if (list1.CountPermutations() == 76) {
 		cout << "Success! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
 	}
+	else{
+		cout << "Failed! The current number of permutations is " << list1.CountPermutations() << " it should be " << 76 << "." << endl;
+	}
 }
 
 // Runs tests
