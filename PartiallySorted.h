@@ -126,18 +126,18 @@ public:
 		int groupNum{ 0 };
 		int numPerms{ 0 };
 		vector<int> groupList;
-		string* current;
+		string current;
 
 		//Going through stringData
 		for (int i = 0; i < size; i++) {
 
 			//setting current to first index
 			if (i == 0) {
-				current = stringData[i].length();
+				current = stringData[i];
 			}
 			else {
 				//checks if current matchings the length, if so then it adds to the groupNum
-				if (current == stringData[i].length()) {
+				if (current.length() == stringData[i].length()) {
 					groupNum++;
 
 					//once the lengths don't match it pushes the groupNum into a vector
